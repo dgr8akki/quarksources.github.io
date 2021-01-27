@@ -18,14 +18,21 @@ def parseAltSourceNews(src: dict, ids: list = None) -> list:
 def validApp(app: dict) -> bool:
     requiredKeys = ["name", "bundleIdentifier", "developerName", "version", "versionDate", "downloadURL", "localizedDescription", "iconURL", "size"]
     for key in requiredKeys:
-        if key not in app:
+        if key not in app.keys():
             return False
     return True
 
 def validNews(article: dict) -> bool:
     requiredKeys = ["title", "identifier", "caption", "date"]
     for key in requiredKeys:
-        if key not in article:
+        if key not in article.keys():
+            return False
+    return True
+
+def validSource(src: dict) -> bool:
+    requiredKeys = ["name", "identifier", "apps", "news"]
+    for key in requiredKeys:
+        if key not in src.keys():
             return False
     return True
 
@@ -59,6 +66,9 @@ def combineSourcesIntoOne(fileName: str, sourceName: str, sourceIdentifier: str,
             src = json.loads(response.text)
         except (json.JSONDecodeError, requests.RequestException) as e:
             print("Error fetching source: " + data["url"] + "\n{}: ".format(type(e).__name__) + str(e) + "\nThis source will not be processed.")
+            continue
+        if not validSource(src):
+            print("Invalid source: " + data["url"] + "\nThis source will not be processed.")
             continue
         # Parse the apps, and perform any data alterations
         readApps = parseAltSourceApps(src, None if data.get("getAllApps") else data.get("ids"))
@@ -98,6 +108,9 @@ def updateFromSources(fileName: str, sourcesData: list, alternateAppData: dict =
             src = json.loads(response.text)
         except (json.JSONDecodeError, requests.RequestException) as e:
             print("Error fetching source: " + data["url"] + "\n{}: ".format(type(e).__name__) + str(e) + "\nUpdates to this source will not be processed.")
+            continue
+        if not validSource(src):
+            print("Invalid source: " + data["url"] + "\nThis source will not be processed.")
             continue
         # Parse the apps, and perform any data alterations
         readApps = parseAltSourceApps(src, None if data.get("getAllApps") else data.get("ids"))
