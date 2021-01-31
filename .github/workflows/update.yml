@@ -2,7 +2,7 @@ name: Update sources
 
 on:
   schedule:
-    - cron:  '55 * * * *'
+    - cron:  '25,55 * * * *'
 
 jobs:
   run:
