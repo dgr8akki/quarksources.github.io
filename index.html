@@ -121,7 +121,7 @@
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
-      <a href="#top">Back to top</a>
+      <a href="#">Back to top</a>
     </p>
     <p id="copyright">Quark Sources &copy; All Rights Reserved</p>
     <p>Not affiliated with AltStore in any way.</p>
@@ -142,19 +142,11 @@
   function browseSource(element) {
     window.open("https://altsource.by.lao.sb/browse/?source=" + encodeURIComponent(element.parentElement.getAttribute("url")));
   }
-  document.querySelectorAll("a[href^='#']").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
-      });
-    });
-  });
   document.getElementById("copyright").innerHTML = "Quark Sources &copy; " + new Date().getFullYear() + " - All Rights Reserved";
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../resources/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../resources/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/24624db525.js" integrity="sha384-MSIrhnO07RvYwpv0TSiY3KBcpkvQgaqQJLv576OXAMIp0PRA53ofC8Yn9wiqwUcz" crossorigin="anonymous"></script>
 </body>
