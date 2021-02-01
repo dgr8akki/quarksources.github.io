@@ -193,14 +193,14 @@
       "bundleIdentifier": "com.spotify.client",
       "developerName": "julioverne",
       "subtitle": "Spotify with free premium.",
-      "version": "8.5.86",
-      "versionDate": "2020-12-02",
-      "versionDescription": "Updated to Spotilife v1.3a.\n\nBug fixes for iOS 13+",
+      "version": "8.5.96",
+      "versionDate": "2021-01-28",
+      "versionDescription": "Bug fixes and various improvements.",
       "downloadURL": "https://github.com/QuarkSources/quarksources.github.io/releases/download/v1.0/Spotify%2B%2B.ipa",
       "localizedDescription": "Spotify++ essentially activates spotify premium on your device with one exception: No downloads.\n\nSo what does Spotify++ change?\n\n• All kinds of ads removed\n• Unlimited skips\n• Play any song or album\n• Enable extreme streaming quality\n• No forced shuffle\n• Import songs from the Music app",
       "iconURL": "https://i.imgur.com/on9H3Vv.png",
       "tintColor": "#1ed760",
-      "size": 59267289,
+      "size": 61252612,
       "permissions": [
         {
           "type": "camera",
